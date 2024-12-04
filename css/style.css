@@ -1,5 +1,8 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font for a modern look */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,25 +16,44 @@ body {
 }
 
 .gameGrid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 320px; /* 3 items x 100px + gaps */
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 100px); /* 3 columns, each 100px */
+    gap: 5px; /* Updated gap between items to 5px */
     margin: 0 auto;
 }
 
 .item {
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 36px;
-    border: 2px solid #333;
-    cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
     background-color: white;
-    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Faint shadow */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for effects */
 }
 
 .item:hover {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Change background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+#reset {
+    margin-top: 20px; /* Margin at the top of the button */
+    padding: 12px 24px; /* Padding for a larger clickable area */
+    font-size: 18px; /* Font size */
+    color: white; /* Text color */
+    background-color: #6200ee; /* Android Material Design color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+#reset:hover {
+    background-color: #3700b3; /* Darker shade on hover */
 }
